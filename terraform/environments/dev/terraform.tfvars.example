@@ -1,0 +1,25 @@
+# ─── terraform.tfvars.example ────────────────────────────────────────────────
+# Bu dosyayı kopyalayın: cp terraform.tfvars.example terraform.tfvars
+# terraform.tfvars dosyasını ASLA git'e commit etmeyin!
+
+aws_region    = "eu-west-1"
+environment   = "dev"
+owner         = "security-team@sirketiniz.com"
+vpc_cidr      = "10.0.0.0/16"
+
+ec2_instance_type = "t3.medium"
+
+s3_report_bucket_prefix = "aws-security-audit-reports"
+report_retention_days   = 90
+
+# Güvenlik uyarılarının gönderileceği e-postalar
+alert_emails = [
+  "security@sirketiniz.com",
+  "devops@sirketiniz.com"
+]
+
+# Prowler uyumluluk framework'leri
+compliance_frameworks = [
+  "cis_aws_foundations_benchmark_v1.4",
+  "aws_foundational_security_best_practices"
+]
